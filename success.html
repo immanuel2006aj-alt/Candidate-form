@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Verification Completed</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  -webkit-tap-highlight-color:transparent;
+}
+body{
+  margin:0;
+  min-height:100vh;
+  background:linear-gradient(180deg,#0a1d44,#020814);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  color:#fff;
+}
+.card{
+  width:100%;
+  max-width:420px;
+  background:linear-gradient(180deg,#071634,#020814);
+  border-radius:28px;
+  padding:28px 24px;
+  text-align:center;
+  box-shadow:0 30px 70px rgba(0,0,0,.6);
+  animation:fadeUp .6s ease;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(14px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.icon{
+  width:82px;
+  height:82px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#19c37d,#2de18b);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:40px;
+  margin:0 auto 18px;
+  box-shadow:0 14px 34px rgba(45,225,139,.55);
+}
+h1{
+  font-size:24px;
+  margin-bottom:8px;
+}
+p{
+  font-size:14px;
+  opacity:.85;
+  line-height:1.5;
+  margin-bottom:22px;
+}
+.info{
+  background:#0f3b2a;
+  color:#3cffb1;
+  padding:12px;
+  border-radius:16px;
+  font-size:13px;
+  margin-bottom:22px;
+}
+button{
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:22px;
+  background:linear-gradient(135deg,#1e63ff,#2f8bff);
+  color:#fff;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+}
+button:active{
+  transform:scale(.97);
+}
+.footer{
+  margin-top:18px;
+  font-size:11px;
+  opacity:.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="icon">✓</div>
+
+  <h1>Verification Completed</h1>
+  <p>
+    Your registration has been successfully verified.  
+    You may now continue using the platform.
+  </p>
+
+  <div class="info">
+    ✔ No Fees • ✔ No Investment • ✔ 100% Transparent
+  </div>
+
+  <button onclick="window.close()">Close</button>
+
+  <div class="footer">
+    🔒 Secure Processing • Data Protected
+  </div>
+</div>
+
+<!-- 🎉 CELEBRATION SOUND -->
+<audio id="successSound" preload="auto">
+  <source src="https://assets.mixkit.co/sfx/preview/mixkit-small-confetti-explosion-1003.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+window.addEventListener("load", () => {
+  const sound = document.getElementById("successSound");
+  sound.volume = 0.6;
+
+  // Mobile-safe delayed autoplay
+  setTimeout(() => {
+    sound.play().catch(() => {
+      // autoplay blocked silently (safe)
+    });
+  }, 700);
+});
+</script>
+
+</body>
+</html>
